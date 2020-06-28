@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.test.dao.ICommentDao">
+    <resultMap id="BaseResultMap" type="com.example.test.entity.Comment">
+    </resultMap>
+    <insert id="add" parameterType="com.example.test.entity.Comment">
+        INSERT INTO comment (u_id,target_id,var,image,count)
+        VALUES (#{u_id},#{target_id},#{var},#{image},#{count})
+    </insert>
+    
+    <select id="listByTid" resultMap="BaseResultMap" parameterType="com.example.test.entity.Comment">
+    	SELECT * FROM comment WHERE target_id=#{target_id}
+    </select>
+    
+</mapper>

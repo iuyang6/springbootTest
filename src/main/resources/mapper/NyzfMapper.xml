@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.test.dao.INyzfDao">
+    <resultMap id="BaseResultMap" type="com.example.test.entity.Nyzf">
+    </resultMap>
+    <insert id="add" parameterType="com.example.test.entity.Nyzf">
+        INSERT INTO nyzf (id,zName,zUser,zLocation,zTime,zImages)
+        VALUES (#{id},#{zName},#{zUser},#{zLocation},#{zTime},#{zImages})
+    </insert>
+    
+    <select id="listById" resultMap="BaseResultMap" parameterType="com.example.test.entity.Nyzf">
+    	SELECT * FROM nyzf
+    </select>
+    
+</mapper>
